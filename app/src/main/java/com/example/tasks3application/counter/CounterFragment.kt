@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.tasks3application.databinding.FragmentCounterBinding
 import androidx.lifecycle.Observer
-import kotlin.random.Random
 
 class CounterFragment : Fragment() {
     private var _binding: FragmentCounterBinding? = null

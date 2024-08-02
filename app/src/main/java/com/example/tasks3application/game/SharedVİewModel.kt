@@ -3,12 +3,14 @@ package com.example.tasks3application.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+class SharedViewModel:ViewModel(){
+    private val _sharedNumber =MutableLiveData<Int>()
+    val sharedNumber:LiveData<Int> get() = _sharedNumber
 
-class SharedViewModel : ViewModel() {
-    private val _sharedChar = MutableLiveData<Char>()
-    val sharedChar: LiveData<Char> get() = _sharedChar
-
-    fun updateChar(char: Char) {
-        _sharedChar.value = char
+    fun shareNumber(number:Int){
+        _sharedNumber.value=number
     }
+
 }
+
+

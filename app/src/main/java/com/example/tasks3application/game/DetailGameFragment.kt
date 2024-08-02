@@ -23,8 +23,13 @@ class DetailGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sharedViewModel.sharedChar.observe(viewLifecycleOwner) { char ->
-            binding.textDetail.text = char.toString()
+        sharedViewModel.sharedNumber.observe(viewLifecycleOwner) { number ->
+            binding.textDetail.text = number.toString()
         }
+
     }
 }
+
+
+
+

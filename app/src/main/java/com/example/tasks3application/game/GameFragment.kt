@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.tasks3application.R
 import com.example.tasks3application.databinding.FragmentGameBinding
 
@@ -26,12 +27,8 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (savedInstanceState != null) {
-            currentGuess = savedInstanceState.getInt("currentGuess", -1).takeIf { it != -1 }
-        }
         setObservers()
         setListeners()
-        updateUI()
     }
 
     private fun setObservers() {
@@ -57,8 +54,8 @@ class GameFragment : Fragment() {
                 val againMessage = getString(R.string.again_message)
                 viewModel.checkGuess(guess, winMessage, againMessage)
                 if (viewModel.resultMessage.value == winMessage) {
-                    val charToUpdate = viewModel.randomChar.value ?: 'A'
-                    sharedViewModel.updateChar(charToUpdate)
+                    val numberToUpdate = viewModel.secretNumber.value ?: 0
+                    sharedViewModel.shareNumber(numberToUpdate)
                 }
             }
         }
@@ -79,15 +76,15 @@ class GameFragment : Fragment() {
             binding.editText.text.clear()
             binding.tvResult.text = viewModel.randomChar.value.toString()
         }
+        binding.tvResult.setOnClickListener {
+            val numberToUpdate = viewModel.secretNumber.value ?: 0
+            sharedViewModel.shareNumber(numberToUpdate)
+            findNavController().navigate(R.id.action_gameFragment_to_detailGameFragment)
+        }
     }
-
-    private fun updateUI() {
-        binding.editText.setText(currentGuess?.toString() ?: "")
-    }
-
+    
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        // Save the current guess
         outState.putInt("currentGuess", currentGuess ?: -1)
     }
 }
