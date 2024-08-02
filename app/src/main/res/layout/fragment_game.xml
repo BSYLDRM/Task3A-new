@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game.GameFragment">
+
+    <TextView
+        android:id="@+id/texCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginTop="@dimen/margin_12"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/text"
+        tools:text="tur" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_large"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="80"
+        android:textColor="@color/text"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_hint"
+        android:inputType="number"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toTopOf="@id/gravityL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/text"/>
+
+    <GridLayout
+        android:id="@+id/gravityL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn1"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn2"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn3"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn4"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn5"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn6"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn7"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn8"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn9"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn_clear"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn0"
+            android:textSize="@dimen/fon_size_medium" />
+
+        <Button
+            android:id="@+id/buttonGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@string/btn_guess"
+            android:textSize="@dimen/fon_size_medium" />
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
