@@ -11,6 +11,7 @@ import com.example.tasks3application.R
 import com.example.tasks3application.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
+
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
     private val viewModel: GameViewModel by activityViewModels()
@@ -82,9 +83,13 @@ class GameFragment : Fragment() {
             findNavController().navigate(R.id.action_gameFragment_to_detailGameFragment)
         }
     }
-    
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt("currentGuess", currentGuess ?: -1)
+        outState.putInt(CURRENT_GUESS, currentGuess ?: -1)
+    }
+
+    companion object {
+        private const val CURRENT_GUESS = "currentGuess"
     }
 }

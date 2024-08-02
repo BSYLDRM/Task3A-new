@@ -26,10 +26,8 @@ class DetailGameFragment : Fragment() {
         sharedViewModel.sharedNumber.observe(viewLifecycleOwner) { number ->
             binding.textDetail.text = number.toString()
         }
-
     }
 }
-
 
 
 
