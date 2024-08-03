@@ -27,6 +27,7 @@ class CounterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initialize()
     }
+
     private fun initialize() {
         updateTextView()
         setListeners()
@@ -55,7 +56,6 @@ class CounterFragment : Fragment() {
     private fun setObserver() {
         viewModel.counterNum.observe(viewLifecycleOwner) { count ->
             updateCounterText(count)
-
         }
     }
 
