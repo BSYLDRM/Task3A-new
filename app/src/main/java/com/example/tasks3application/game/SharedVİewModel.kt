@@ -8,7 +8,7 @@ class SharedViewModel : ViewModel() {
     private val _sharedNumber = MutableLiveData<Int>()
     val sharedNumber: LiveData<Int> get() = _sharedNumber
 
-    fun shareNumber(number: Int) {
+    fun setShareNumber(number: Int) {
         _sharedNumber.value = number
     }
 }

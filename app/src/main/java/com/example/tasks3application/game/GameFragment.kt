@@ -16,7 +16,6 @@ class GameFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: GameViewModel by activityViewModels()
     private val sharedViewModel: SharedViewModel by activityViewModels()
-    private var currentGuess: Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +42,6 @@ class GameFragment : Fragment() {
 
         viewModel.turnsCount.observe(viewLifecycleOwner) { turns ->
             binding.texCount.text = getString(R.string.turns_count, turns)
-
         }
     }
 
@@ -56,7 +54,7 @@ class GameFragment : Fragment() {
                 viewModel.checkGuess(guess, winMessage, againMessage)
                 if (viewModel.resultMessage.value == winMessage) {
                     val numberToUpdate = viewModel.secretNumber.value ?: 0
-                    sharedViewModel.shareNumber(numberToUpdate)
+                    sharedViewModel.setShareNumber(numberToUpdate)
                 }
             }
         }
@@ -79,17 +77,8 @@ class GameFragment : Fragment() {
         }
         binding.tvResult.setOnClickListener {
             val numberToUpdate = viewModel.secretNumber.value ?: 0
-            sharedViewModel.shareNumber(numberToUpdate)
+            sharedViewModel.setShareNumber(numberToUpdate)
             findNavController().navigate(R.id.action_gameFragment_to_detailGameFragment)
         }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt(CURRENT_GUESS, currentGuess ?: -1)
-    }
-
-    companion object {
-        private const val CURRENT_GUESS = "currentGuess"
     }
 }

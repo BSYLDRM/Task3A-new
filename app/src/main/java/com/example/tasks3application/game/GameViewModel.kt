@@ -16,7 +16,6 @@ class GameViewModel : ViewModel() {
 
     init {
         startGame()
-        _turnsCount.value = 0
     }
 
     fun startGame() {
@@ -29,7 +28,6 @@ class GameViewModel : ViewModel() {
         _turnsCount.value = (_turnsCount.value ?: 0) + 1
         if (guess == _secretNumber.value) {
             _resultMessage.value = winMessage
-            _randomChar.value = _secretNumber.value.toString().first()
             startGame()
         } else {
             _resultMessage.value = againMessage

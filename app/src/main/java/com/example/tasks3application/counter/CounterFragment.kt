@@ -52,19 +52,11 @@ class CounterFragment : Fragment() {
             updateTextView()
         }
     }
-
     private fun setObserver() {
         viewModel.counterNum.observe(viewLifecycleOwner) { count ->
-            updateCounterText(count)
+            updateTextView()
         }
     }
-
-    private fun updateCounterText(count: Int) {
-        if (isCheckSwitch) {
-            binding.tvFragmentSay.text = count.toString()
-        }
-    }
-
     private fun updateTextView() {
         val textToDisplay = if (isCheckSwitch) {
             viewModel.counterNum.value?.toString() ?: "0"
@@ -72,12 +64,6 @@ class CounterFragment : Fragment() {
             counter.toString()
         }
         binding.tvFragmentSay.text = textToDisplay
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBoolean("checkSwitch", isCheckSwitch)
-        outState.putInt("counter", counter)
     }
 
     override fun onDestroyView() {
